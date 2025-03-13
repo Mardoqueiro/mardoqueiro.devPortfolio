@@ -179,20 +179,14 @@
 
                 <section class="about-text">
                     <p>
-                        I'm Creative Director and UI/UX Designer from Sydney, Australia,
-                        working in web development and print media. I enjoy turning
-                        complex problems into simple, beautiful and intuitive designs.
+                        I'm a passionate web developer with a keen eye for detail and a love for creating intuitive digital experiences. I specialize in front-end development, transforming ideas into functional, user-friendly, and visually appealing websites. My goal is to bridge the gap between design and development, ensuring seamless interactions and engaging interfaces.
                     </p>
-
+                
                     <p>
-                        My job is to build your website so that it is functional and
-                        user-friendly but at the same time attractive. Moreover, I add
-                        personal touch to your product and make sure that is eye-catching
-                        and easy to use. My aim is to bring across your message and
-                        identity in the most creative way. I created web design for many
-                        famous brand companies.
+                        My focus is on building clean, efficient, and responsive web applications that not only look great but also perform exceptionally well. Whether it's crafting interactive user interfaces or optimizing website functionality, I take pride in delivering high-quality solutions that align with both user needs and business goals. I'm always eager to learn, grow, and collaborate on exciting projects that push creative and technical boundaries.
                     </p>
                 </section>
+                
 
                 <!--
           - service
@@ -264,11 +258,287 @@
                     </ul>
                 </section>
 
+
+
+                <!--
+          - Skills
+        -->
+
+        <section class="skill">
+
+            <!-- <h3 class="h3 skills-title">My skills</h3> -->
+  
+            <header>
+              <h2 class="h2 article-title">My skills</h2>
+            </header>
+  
+            <ul class="skills-list content-card">
+  
+              <section class="projects">
+  
+                <ul class="filter-list">
+  
+                  <li class="filter-item">
+                    <button class="active" data-filter-btn>All</button>
+                  </li>
+  
+                  <li class="filter-item">
+                    <button data-filter-btn>Techical skills</button>
+                  </li>
+  
+                  <li class="filter-item">
+                    <button data-filter-btn>Soft skills</button>
+                  </li>
+  
+                  <li class="filter-item">
+                    <button data-filter-btn>Badges</button>
+                  </li>
+  
+                </ul>
+  
+                <div class="filter-select-box">
+  
+                  <button class="filter-select" data-select>
+  
+                    <div class="select-value" data-selecct-value>Select category</div>
+  
+                    <div class="select-icon">
+                      <ion-icon name="chevron-down"></ion-icon>
+                    </div>
+  
+                  </button>
+  
+                  <ul class="select-list">
+  
+                    <li class="select-item">
+                      <button data-select-item>All</button>
+                    </li>
+  
+                    <li class="select-item">
+                      <button data-select-item>Techical skills</button>
+                    </li>
+  
+                    <li class="select-item">
+                      <button data-select-item>Soft skills</button>
+                    </li>
+  
+                    <li class="select-item">
+                      <button data-select-item>Badges</button>
+                    </li>
+  
+                  </ul>
+  
+                </div>
+  
+  
+  
+                <ul class="project-list">
+  
+                  <li class="project-item active" data-filter-item data-category="techical skills">
+                    <a href="#">
+                      <div :key="skill.id" class="skill-badge">
+                        <figure class="skills-img">
+                          <img src="./assets/images/html-5.png" loading="lazy" class="skill-image" :alt="skill.title">
+                        </figure>
+                      </div>
+                      <h3 class="project-title">HTML 5</h3>
+                      <p class="project-category">Techical skills</p>
+                    </a>
+                  </li>
+  
+                  <li class="project-item  active" data-filter-item data-category="techical skills">
+                    <a href="#">
+                      <div :key="skill.id" class="skill-badge">
+                        <figure class="skills-img">
+                          <img src="./assets/images/css-3.png" loading="lazy" class="skill-image" :alt="skill.title">
+                        </figure>
+                      </div>
+                      <h3 class="project-title">CSS</h3>
+                      <p class="project-category">Techical skills</p>
+                    </a>
+                  </li>
+  
+                  <li class="project-item  active" data-filter-item data-category="techical skills">
+                    <a href="#">
+                      <div :key="skill.id" class="skill-badge">
+                        <figure class="skills-img">
+                          <img src="./assets/images/js.png" loading="lazy" class="skill-image" :alt="skill.title">
+                        </figure>
+                      </div>
+                      <h3 class="project-title">JavaScript</h3>
+                      <p class="project-category">Techical skills</p>
+                    </a>
+                  </li>
+  
+                  <li class="project-item  active" data-filter-item data-category="techical skills">
+                    <a href="#">
+                      <div :key="skill.id" class="skill-badge">
+                        <figure class="skills-img">
+                          <img src="../assets/images/github.png" loading="lazy" class="skill-image" :alt="skill.title">
+                        </figure>
+                      </div>
+                      <h3 class="project-title">Git Hub</h3>
+                      <p class="project-category">Techical skills</p>
+                    </a>
+                  </li>
+  
+                  <li class="project-item  active" data-filter-item data-category="techical skills">
+                    <a href="#">
+                      <div :key="skill.id" class="skill-badge">
+                        <figure class="skills-img">
+                          <img src="./assets/images/vue-js.png" loading="lazy" class="skill-image" :alt="skill.title">
+                        </figure>
+                      </div>
+                      <h3 class="project-title">Vue.Js 3</h3>
+                      <p class="project-category">Techical skills</p>
+                    </a>
+                  </li>
+  
+                  <li class="project-item  active" data-filter-item data-category="techical skills">
+                    <a href="#">
+                      <div :key="skill.id" class="skill-badge">
+                        <figure class="skills-img">
+                          <img src="./assets/images/mysql.png" loading="lazy" class="skill-image" :alt="skill.title">
+                        </figure>
+                      </div>
+                      <h3 class="project-title">MySQL</h3>
+                      <p class="project-category">Techical skills</p>
+  
+                    </a>
+                  </li>
+  
+                  <li class="project-item  active" data-filter-item data-category="techical skills">
+                    <a href="#">
+                      <div :key="skill.id" class="skill-badge">
+                        <figure class="skills-img">
+                          <img src="./assets/images/nodejs.png" loading="lazy" class="skill-image" :alt="skill.title">
+                        </figure>
+                      </div>
+                      <h3 class="project-title">Node.Js</h3>
+                      <p class="project-category">Techical skills</p>
+  
+                    </a>
+                  </li>
+  
+  
+                  <li class="project-item  active" data-filter-item data-category="soft skills">
+                    <a href="#">
+                      <div :key="skill.id" class="skill-badge">
+                        <figure class="skills-img">
+                          <img src="./assets/images/ui.png" loading="lazy" class="skill-image" :alt="skill.title">
+                        </figure>
+                      </div>
+                      <h3 class="project-title">UI/UX</h3>
+                      <p class="project-category">Soft skills</p>
+  
+                    </a>
+                  </li>
+                  <li class="project-item  active" data-filter-item data-category="soft skills">
+                    <a href="#">
+                      <div :key="skill.id" class="skill-badge">
+                        <figure class="skills-img">
+                          <img src="./assets/images/solution.png" loading="lazy" class="skill-image" :alt="skill.title">
+                        </figure>
+                      </div>
+                      <h3 class="project-title">Problem Solving</h3>
+                      <p class="project-category">Soft skills</p>
+  
+                    </a>
+                  </li>
+  
+                  <li class="project-item  active" data-filter-item data-category="badges">
+                    <a href="#">
+                      <div :key="skill.id" class="skill-badge">
+                        <figure class="skills-img">
+                          <img src="./assets/images/operating-systems-basics.png" loading="lazy" class="skill-image"
+                            :alt="skill.title">
+                        </figure>
+                      </div>
+                      <h3 class="project-title">OS Basics</h3>
+                      <!-- <h3 class="project-title">Basics</h3>     -->
+                      <p class="project-category">Badges</p>
+  
+                    </a>
+                  </li>
+  
+                  <li class="project-item  active" data-filter-item data-category="techical skills">
+                    <a href="#">
+                      <div :key="skill.id" class="skill-badge">
+                        <figure class="skills-img">
+                          <img src="./assets/images/figma.png" loading="lazy" class="skill-image" :alt="skill.title">
+                        </figure>
+                      </div>
+                      <h3 class="project-title">Figma</h3>
+                      <p class="project-category">Techical skills</p>
+  
+                    </a>
+                  </li>
+  
+                  <li class="project-item  active" data-filter-item data-category="techical skills">
+                    <a href="#">
+                      <div :key="skill.id" class="skill-badge">
+                        <figure class="skills-img">
+                          <img src="./assets/images/firebase_google_icon.png" loading="lazy" class="skill-image"
+                            :alt="skill.title">
+                        </figure>
+                      </div>
+                      <h3 class="project-title">Fire Base</h3>
+                      <p class="project-category">Techical skills</p>
+  
+                    </a>
+                  </li>
+                  <li class="project-item  active" data-filter-item data-category="badges">
+                    <a href="#">
+                      <div :key="skill.id" class="skill-badge">
+                        <figure class="skills-img">
+                          <img src="./assets/images/UIUX.png" loading="lazy" class="skill-image" :alt="skill.title">
+                        </figure>
+                      </div>
+                      <h3 class="project-title">Figma UI/UX</h3>
+                      <p class="project-category">Badges</p>
+  
+                    </a>
+                  </li>
+                  <li class="project-item  active" data-filter-item data-category="badges">
+                    <a href="#">
+                      <div :key="skill.id" class="skill-badge">
+                        <figure class="skills-img">
+                          <img src="./assets/images/APIs.png" loading="lazy" class="skill-image" :alt="skill.title">
+                        </figure>
+                      </div>
+                      <h3 class="project-title">WordPress Ecom</h3>
+                      <p class="project-category">Badges</p>
+  
+                    </a>
+                  </li>
+  
+                </ul>
+  
+              </section>
+  
+              <!-- <li class="skills-item">
+  
+                <div class="title-wrapper">
+                  <h5 class="h5">Web design</h5>
+                  <data value="80">80%</data>
+                </div>
+  
+                <div class="skill-progress-bg">
+                  <div class="skill-progress-fill" style="width: 80%;"></div>
+                </div>
+  
+              </li> -->
+            </ul>
+  
+          </section>
+
+
+
                 <!--
           - testimonials
         -->
 
-                <section class="testimonials">
+                <!-- <section class="testimonials">
                     <h3 class="h3 testimonials-title">Testimonials</h3>
 
                     <ul class="testimonials-list has-scrollbar">
@@ -295,81 +565,10 @@
                                 </div>
                             </div>
                         </li>
-
-                        <li class="testimonials-item">
-                            <div class="content-card" data-testimonials-item>
-                                <figure class="testimonials-avatar-box">
-                                    <img src="/asset/image/avatar-2.png" alt="Jessica miller" width="60"
-                                        data-testimonials-avatar />
-                                </figure>
-
-                                <h4 class="h4 testimonials-item-title" data-testimonials-title>
-                                    Jessica miller
-                                </h4>
-
-                                <div class="testimonials-text" data-testimonials-text>
-                                    <p>
-                                        Richard was hired to create a corporate identity. We were
-                                        very pleased with the work done. She has a lot of
-                                        experience and is very concerned about the needs of
-                                        client. Lorem ipsum dolor sit amet, ullamcous cididt
-                                        consectetur adipiscing elit, seds do et eiusmod tempor
-                                        incididunt ut laborels dolore magnarels alia.
-                                    </p>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li class="testimonials-item">
-                            <div class="content-card" data-testimonials-item>
-                                <figure class="testimonials-avatar-box">
-                                    <img src="/asset/image/avatar-3.png" alt="Emily evans" width="60"
-                                        data-testimonials-avatar />
-                                </figure>
-
-                                <h4 class="h4 testimonials-item-title" data-testimonials-title>
-                                    Emily evans
-                                </h4>
-
-                                <div class="testimonials-text" data-testimonials-text>
-                                    <p>
-                                        Richard was hired to create a corporate identity. We were
-                                        very pleased with the work done. She has a lot of
-                                        experience and is very concerned about the needs of
-                                        client. Lorem ipsum dolor sit amet, ullamcous cididt
-                                        consectetur adipiscing elit, seds do et eiusmod tempor
-                                        incididunt ut laborels dolore magnarels alia.
-                                    </p>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li class="testimonials-item">
-                            <div class="content-card" data-testimonials-item>
-                                <figure class="testimonials-avatar-box">
-                                    <img src="/asset/image/avatar-4.png" alt="Henry william" width="60"
-                                        data-testimonials-avatar />
-                                </figure>
-
-                                <h4 class="h4 testimonials-item-title" data-testimonials-title>
-                                    Henry william
-                                </h4>
-
-                                <div class="testimonials-text" data-testimonials-text>
-                                    <p>
-                                        Richard was hired to create a corporate identity. We were
-                                        very pleased with the work done. She has a lot of
-                                        experience and is very concerned about the needs of
-                                        client. Lorem ipsum dolor sit amet, ullamcous cididt
-                                        consectetur adipiscing elit, seds do et eiusmod tempor
-                                        incididunt ut laborels dolore magnarels alia.
-                                    </p>
-                                </div>
-                            </div>
-                        </li>
                     </ul>
-                </section>
+                </section> -->
 
+                
                 <!--
           - testimonials modal
         -->
@@ -414,44 +613,46 @@
         -->
 
                 <section class="clients">
-                    <h3 class="h3 clients-title">Clients</h3>
+                    <header>
+                        <h2 class="h2 article-title">My Certificates</h2>
+                      </header>
 
                     <ul class="clients-list has-scrollbar">
                         <li class="clients-item">
                             <a href="#">
-                                <img src="/asset/image/logo-1-color.png" alt="client logo" />
+                                <img src="/asset/image/certification/JavaScript_Essentials_2_certification.jpg" alt="client logo" />
                             </a>
                         </li>
 
                         <li class="clients-item">
                             <a href="#">
-                                <img src="/asset/image/logo-2-color.png" alt="client logo" />
+                                <img src="/asset/image/certification/Operating_Systems_Basics_certification.jpg" alt="client logo" />
                             </a>
                         </li>
 
                         <li class="clients-item">
                             <a href="#">
-                                <img src="/asset/image/logo-3-color.png" alt="client logo" />
+                                <img src="/asset/image/certification/SEOCertified.png" alt="client logo" />
                             </a>
                         </li>
 
                         <li class="clients-item">
                             <a href="#">
-                                <img src="/asset/image/logo-4-color.png" alt="client logo" />
+                                <img src="/asset/image/certification/HubSpotSEO_ll_certified.png" alt="client logo" />
                             </a>
                         </li>
 
                         <li class="clients-item">
                             <a href="#">
-                                <img src="/asset/image/logo-5-color.png" alt="client logo" />
+                                <img src="/asset/image/certification/DigitalMarketing2024.png" alt="client logo" />
                             </a>
                         </li>
 
-                        <li class="clients-item">
+                        <!-- <li class="clients-item">
                             <a href="#">
-                                <img src="/asset/image/logo-6-color.png" alt="client logo" />
+                                <img src="/asset/image/" alt="client logo" />
                             </a>
-                        </li>
+                        </li> -->
                     </ul>
                 </section>
             </article>
