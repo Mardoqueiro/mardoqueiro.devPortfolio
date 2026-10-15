@@ -1,12 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#0b0d16" />
     <title>mardoqueiro.devPortfolio</title>
+
+    <!--
+    - apply the saved (or system) theme before first paint so the page never flashes
+    -->
+    <script>
+        (function () {
+            var theme = "dark";
+            try {
+                theme = localStorage.getItem("theme") ||
+                    (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+            } catch (e) { }
+            document.documentElement.dataset.theme = theme;
+        })();
+    </script>
 
     <!--
     - favicon
@@ -30,6 +44,41 @@
 
 <body>
     <!--
+    - liquid glass refraction filters (maps are drawn by code.js; Chromium only)
+    -->
+
+    <svg class="svg-defs" width="0" height="0" aria-hidden="true" focusable="false">
+        <filter id="lg-navbar" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+            <feImage x="0" y="0" preserveAspectRatio="none" result="map" />
+            <feDisplacementMap in="SourceGraphic" in2="map" scale="36" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+
+        <filter id="lg-appbar" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+            <feImage x="0" y="0" preserveAspectRatio="none" result="map" />
+            <feDisplacementMap in="SourceGraphic" in2="map" scale="30" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+    </svg>
+
+    <!--
+    - #APPBAR
+    -->
+
+    <header class="appbar" data-appbar>
+        <p class="appbar-brand">mardoqueiro.dev</p>
+
+        <div class="appbar-actions">
+            <button class="appbar-btn appbar-btn-contact" data-goto="contact" aria-label="Message me">
+                <ion-icon name="paper-plane-outline"></ion-icon>
+            </button>
+
+            <button class="appbar-btn" data-theme-btn aria-label="Switch theme">
+                <ion-icon class="theme-icon-light" name="sunny-outline"></ion-icon>
+                <ion-icon class="theme-icon-dark" name="moon-outline"></ion-icon>
+            </button>
+        </div>
+    </header>
+
+    <!--
     - #MAIN
     -->
 
@@ -42,7 +91,7 @@
             <div class="sidebar-info">
                 <figure class="avatar-box">
                     <img src="https://mardoqueiro.github.io/all_images/Vue.EOMP/Portfolio.images/MordecaiPortfolio.png"
-                        alt="Mardoqueiro Dimbu" width="80" loading="lazy">
+                        alt="Mardoqueiro Dimbu" width="80" height="80">
                 </figure>
 
                 <div class="info-content">
@@ -51,90 +100,178 @@
                     <p class="title">Full-Stack Developer</p>
                 </div>
 
-                <button class="info_more-btn" data-sidebar-btn>
-                    <span>Show Contacts</span>
+                <ul class="profile-stats">
+                    <li>
+                        <data class="stat-value" value="7" data-stat="projects">7</data>
+                        <span>projects</span>
+                    </li>
+
+                    <li>
+                        <data class="stat-value" value="14" data-stat="skills">14</data>
+                        <span>skills</span>
+                    </li>
+
+                    <li>
+                        <data class="stat-value" value="5" data-stat="certificates">5</data>
+                        <span>certificates</span>
+                    </li>
+                </ul>
+            </div>
+
+            <p class="profile-bio">
+                Building clean, responsive web experiences. Content creator and rock climber.
+            </p>
+
+            <div class="profile-actions">
+                <button class="profile-btn profile-btn-primary" data-goto="contact">Message</button>
+
+                <button class="profile-btn" data-sidebar-btn aria-expanded="false" aria-controls="contact-info">
+                    <span>Contact info</span>
 
                     <ion-icon name="chevron-down"></ion-icon>
                 </button>
             </div>
 
-            <div class="sidebar-info_more">
-                <div class="separator"></div>
+            <!--
+            - highlights (jump to sections of the About page)
+            -->
 
-                <ul class="contacts-list">
-                    <li class="contact-item">
-                        <div class="icon-box">
-                            <ion-icon name="mail-outline"></ion-icon>
-                        </div>
+            <ul class="highlights">
+                <li>
+                    <a href="#skills" class="highlight" data-goto="about">
+                        <span class="highlight-ring">
+                            <ion-icon name="code-slash-outline"></ion-icon>
+                        </span>
+                        <span class="highlight-label">Skills</span>
+                    </a>
+                </li>
 
-                        <div class="contact-info">
-                            <p class="contact-title">Email</p>
+                <li>
+                    <a href="#certificates" class="highlight" data-goto="about">
+                        <span class="highlight-ring">
+                            <ion-icon name="ribbon-outline"></ion-icon>
+                        </span>
+                        <span class="highlight-label">Certificates</span>
+                    </a>
+                </li>
 
-                            <a href="mailto:mordecai.dimbu@gmail.com" class="contact-link">mordecai.dimbu@gmail.com</a>
-                        </div>
-                    </li>
+                <li>
+                    <a href="#service-dev" class="highlight" data-goto="about">
+                        <span class="highlight-ring">
+                            <img src="asset/image/icon-dev.svg" alt="" width="28">
+                        </span>
+                        <span class="highlight-label">Web dev</span>
+                    </a>
+                </li>
 
-                    <li class="contact-item">
-                        <div class="icon-box">
-                            <ion-icon name="phone-portrait-outline"></ion-icon>
-                        </div>
+                <li>
+                    <a href="#service-design" class="highlight" data-goto="about">
+                        <span class="highlight-ring">
+                            <img src="asset/image/icon-design.svg" alt="" width="28">
+                        </span>
+                        <span class="highlight-label">Design</span>
+                    </a>
+                </li>
 
-                        <div class="contact-info">
-                            <p class="contact-title">Phone</p>
+                <li>
+                    <a href="#service-content" class="highlight" data-goto="about">
+                        <span class="highlight-ring">
+                            <img src="asset/image/icon-photo.svg" alt="" width="28">
+                        </span>
+                        <span class="highlight-label">Content</span>
+                    </a>
+                </li>
 
-                            <a href="tel:+27695872540" class="contact-link">+27 69 587 2540</a>
-                        </div>
-                    </li>
+                <li>
+                    <a href="#service-climbing" class="highlight" data-goto="about">
+                        <span class="highlight-ring">
+                            <img src="asset/image/person-climbing-svgrepo-com.svg" alt="" width="28">
+                        </span>
+                        <span class="highlight-label">Climbing</span>
+                    </a>
+                </li>
+            </ul>
 
-                    <!-- <li class="contact-item">
+            <div class="sidebar-info_more" id="contact-info">
+                <div class="sidebar-info_more-inner">
+                  <div class="separator"></div>
 
-                        <div class="icon-box">
-                            <ion-icon name="calendar-outline"></ion-icon>
-                        </div>
+                  <ul class="contacts-list">
+                      <li class="contact-item">
+                          <div class="icon-box">
+                              <ion-icon name="mail-outline"></ion-icon>
+                          </div>
 
-                        <div class="contact-info">
-                            <p class="contact-title">Birthday</p>
+                          <div class="contact-info">
+                              <p class="contact-title">Email</p>
 
-                            <time datetime="2004.01.15">15 January 2004</time>
-                        </div>
+                              <a href="mailto:mordecai.dimbu@gmail.com" class="contact-link">mordecai.dimbu@gmail.com</a>
+                          </div>
+                      </li>
 
-                    </li> -->
+                      <li class="contact-item">
+                          <div class="icon-box">
+                              <ion-icon name="phone-portrait-outline"></ion-icon>
+                          </div>
 
-                    <li class="contact-item">
-                        <div class="icon-box">
-                            <ion-icon name="location-outline"></ion-icon>
-                        </div>
+                          <div class="contact-info">
+                              <p class="contact-title">Phone</p>
 
-                        <div class="contact-info">
-                            <p class="contact-title">Location</p>
+                              <a href="tel:+27695872540" class="contact-link">+27 69 587 2540</a>
+                          </div>
+                      </li>
 
-                            <address>Cape Town, Western Cape, South Africa</address>
-                        </div>
-                    </li>
-                </ul>
+                      <!-- <li class="contact-item">
 
-                <div class="separator"></div>
+                          <div class="icon-box">
+                              <ion-icon name="calendar-outline"></ion-icon>
+                          </div>
 
-                <ul class="social-list">
-                    <li class="social-item">
-                        <a href="https://www.linkedin.com/in/mardoqu%C3%A9iro-dimbu-55b142283/" class="social-link"
-                            target="_blank">
-                            <ion-icon name="logo-linkedin"></ion-icon>
-                        </a>
-                    </li>
+                          <div class="contact-info">
+                              <p class="contact-title">Birthday</p>
 
-                    <li class="social-item">
-                        <a href="https://github.com/Mardoqueiro" class="social-link" target="_blank">
-                            <ion-icon name="logo-github"></ion-icon>
-                        </a>
-                    </li>
+                              <time datetime="2004.01.15">15 January 2004</time>
+                          </div>
 
-                    <!-- <li class="social-item">
-                  <a href="#" class="social-link">
-                    <ion-icon name="logo-instagram"></ion-icon>
-                  </a>
-                    </li> -->
-                </ul>
+                      </li> -->
+
+                      <li class="contact-item">
+                          <div class="icon-box">
+                              <ion-icon name="location-outline"></ion-icon>
+                          </div>
+
+                          <div class="contact-info">
+                              <p class="contact-title">Location</p>
+
+                              <address>Cape Town, Western Cape, South Africa</address>
+                          </div>
+                      </li>
+                  </ul>
+
+                  <div class="separator"></div>
+
+                  <ul class="social-list">
+                      <li class="social-item">
+                          <a href="https://www.linkedin.com/in/mardoqu%C3%A9iro-dimbu-55b142283/" class="social-link"
+                              target="_blank" aria-label="LinkedIn">
+                              <ion-icon name="logo-linkedin"></ion-icon>
+                          </a>
+                      </li>
+
+                      <li class="social-item">
+                          <a href="https://github.com/Mardoqueiro" class="social-link" target="_blank"
+                              aria-label="GitHub">
+                              <ion-icon name="logo-github"></ion-icon>
+                          </a>
+                      </li>
+
+                      <!-- <li class="social-item">
+                    <a href="#" class="social-link">
+                      <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                      </li> -->
+                  </ul>
+                </div>
             </div>
         </aside>
 
@@ -147,18 +284,32 @@
         - #NAVBAR
         -->
 
-            <nav class="navbar">
+            <nav class="navbar" aria-label="Sections" data-navbar>
+                <span class="navbar-indicator" data-nav-indicator aria-hidden="true"></span>
+
                 <ul class="navbar-list">
                     <li class="navbar-item">
-                        <button class="navbar-link active" data-nav-link>About</button>
+                        <button class="navbar-link active" data-nav-link="about" aria-current="page">
+                            <ion-icon class="icon-off" name="person-outline"></ion-icon>
+                            <ion-icon class="icon-on" name="person"></ion-icon>
+                            <span>About</span>
+                        </button>
                     </li>
 
                     <li class="navbar-item">
-                        <button class="navbar-link" data-nav-link>Experience</button>
+                        <button class="navbar-link" data-nav-link="experience">
+                            <ion-icon class="icon-off" name="briefcase-outline"></ion-icon>
+                            <ion-icon class="icon-on" name="briefcase"></ion-icon>
+                            <span>Experience</span>
+                        </button>
                     </li>
 
                     <li class="navbar-item">
-                        <button class="navbar-link" data-nav-link>Projects</button>
+                        <button class="navbar-link" data-nav-link="projects">
+                            <ion-icon class="icon-off" name="grid-outline"></ion-icon>
+                            <ion-icon class="icon-on" name="grid"></ion-icon>
+                            <span>Projects</span>
+                        </button>
                     </li>
 
                     <!-- <li class="navbar-item">
@@ -166,7 +317,11 @@
                     </li> -->
 
                     <li class="navbar-item">
-                        <button class="navbar-link" data-nav-link>Contact</button>
+                        <button class="navbar-link" data-nav-link="contact">
+                            <ion-icon class="icon-off" name="chatbubble-ellipses-outline"></ion-icon>
+                            <ion-icon class="icon-on" name="chatbubble-ellipses"></ion-icon>
+                            <span>Contact</span>
+                        </button>
                     </li>
                 </ul>
             </nav>
@@ -206,7 +361,7 @@
 
                     <ul class="service-list">
 
-                        <li class="service-item">
+                        <li class="service-item" id="service-dev">
                             <div class="service-icon-box">
                                 <img src="/asset/image/icon-dev.svg" alt="Web development icon" width="40" />
                             </div>
@@ -220,7 +375,7 @@
                             </div>
                         </li>
 
-                        <li class="service-item">
+                        <li class="service-item" id="service-design">
                             <div class="service-icon-box">
                                 <img src="/asset/image/icon-design.svg" alt="design icon" width="40" />
                             </div>
@@ -235,7 +390,7 @@
                             </div>
                         </li>
 
-                        <li class="service-item">
+                        <li class="service-item" id="service-content">
 
                             <div class="service-icon-box">
                                 <img src="asset/image/icon-photo.svg" alt="camera icon" width="40">
@@ -253,7 +408,7 @@
 
 
                         </li>
-                        <li class="service-item">
+                        <li class="service-item" id="service-climbing">
 
                             <div class="service-icon-box">
                                 <img src="asset/image/person-climbing-svgrepo-com.svg" alt="climbing icon" width="40">
@@ -280,7 +435,7 @@
           - #Skills
         -->
 
-                <section class="skill">
+                <section class="skill" id="skills">
 
                     <!-- <h3 class="h3 skills-title">My skills</h3> -->
 
@@ -312,39 +467,6 @@
 
                             </ul>
 
-                            <div class="filter-select-box">
-
-                                <button class="filter-select" data-select>
-
-                                    <div class="select-value" data-selecct-value>Select category</div>
-
-                                    <div class="select-icon">
-                                        <ion-icon name="chevron-down"></ion-icon>
-                                    </div>
-
-                                </button>
-
-                                <ul class="select-list">
-
-                                    <li class="select-item">
-                                        <button data-select-item>All</button>
-                                    </li>
-
-                                    <li class="select-item">
-                                        <button data-select-item>Techical skills</button>
-                                    </li>
-
-                                    <li class="select-item">
-                                        <button data-select-item>Soft skills</button>
-                                    </li>
-
-                                    <li class="select-item">
-                                        <button data-select-item>Badges</button>
-                                    </li>
-
-                                </ul>
-
-                            </div>
 
 
 
@@ -394,7 +516,7 @@
                                         <div class="skill-badge">
                                             <figure class="skills-img">
                                                 <img src="asset/image/skills/github.png" loading="lazy"
-                                                    class="skill-image" alt="GitHub logo">
+                                                    class="skill-image logo-invert" alt="GitHub logo">
                                             </figure>
                                         </div>
                                         <h3 class="project-title">Git Hub</h3>
@@ -597,44 +719,6 @@
                 </section> -->
 
 
-                <!--
-          - testimonials modal
-        -->
-
-                <div class="modal-container" data-modal-container>
-                    <div class="overlay" data-overlay></div>
-
-                    <section class="testimonials-modal">
-                        <button class="modal-close-btn" data-modal-close-btn>
-                            <ion-icon name="close-outline"></ion-icon>
-                        </button>
-
-                        <div class="modal-img-wrapper">
-                            <figure class="modal-avatar-box">
-                                <img src="/asset/image" alt="Daniel lewis" width="80" data-modal-img />
-                            </figure>
-
-                            <img src="/asset/image/icon-quote.svg" alt="quote icon" />
-                        </div>
-
-                        <div class="modal-content">
-                            <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
-
-                            <time datetime="2021-06-14">14 June, 2021</time>
-
-                            <div data-modal-text>
-                                <p>
-                                    Richard was hired to create a corporate identity. We were
-                                    very pleased with the work done. She has a lot of experience
-                                    and is very concerned about the needs of client. Lorem ipsum
-                                    dolor sit amet, ullamcous cididt consectetur adipiscing
-                                    elit, seds do et eiusmod tempor incididunt ut laborels
-                                    dolore magnarels alia.
-                                </p>
-                            </div>
-                        </div>
-                    </section>
-                </div>
 
                 <!-- <div class="modal-container" data-modal-container>
                     <div class="overlay" data-overlay></div>
@@ -675,7 +759,7 @@
           - clients
         -->
 
-                <section class="clients">
+                <section class="clients" id="certificates">
                     <header>
                         <h2 class="h2 article-title">My Certificates</h2>
                     </header>
@@ -923,39 +1007,6 @@
 
                     </ul>
 
-                    <div class="filter-select-box">
-
-                        <button class="filter-select" data-select>
-
-                            <div class="select-value" data-selecct-value>Select category</div>
-
-                            <div class="select-icon">
-                                <ion-icon name="chevron-down"></ion-icon>
-                            </div>
-
-                        </button>
-
-                        <ul class="select-list">
-
-                            <li class="select-item">
-                                <button data-select-item>All</button>
-                            </li>
-
-                            <li class="select-item">
-                                <button data-select-item>Web design</button>
-                            </li>
-
-                            <li class="select-item">
-                                <button data-select-item>Applications</button>
-                            </li>
-
-                            <li class="select-item">
-                                <button data-select-item>Web development</button>
-                            </li>
-
-                        </ul>
-
-                    </div>
 
                     <ul class="project-list">
 
