@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b0d16" />
     <title>mardoqueiro.devPortfolio</title>
 
     <!--
@@ -24,7 +25,7 @@
     -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 
 <body>
@@ -45,7 +46,7 @@
                 </figure>
 
                 <div class="info-content">
-                    <h1 class="name" title="Richard hanrick">Mardoquéiro Dimbu</h1>
+                    <h1 class="name">Mardoquéiro Dimbu</h1>
 
                     <p class="title">Full-Stack Developer</p>
                 </div>
@@ -255,7 +256,7 @@
                         <li class="service-item">
 
                             <div class="service-icon-box">
-                                <img src="asset/image/person-climbing-svgrepo-com.svg" alt="camera icon" width="40">
+                                <img src="asset/image/person-climbing-svgrepo-com.svg" alt="climbing icon" width="40">
                             </div>
 
                             <div class="service-content-box">
@@ -351,10 +352,10 @@
 
                                 <li class="project-item active" data-filter-item data-category="techical skills">
                                     <a href="#">
-                                        <div :key="skill.id" class="skill-badge">
+                                        <div class="skill-badge">
                                             <figure class="skills-img">
                                                 <img src="asset/image/skills/html-5.png" loading="lazy"
-                                                    class="skill-image" :alt="skill.title">
+                                                    class="skill-image" alt="HTML5 logo">
                                             </figure>
                                         </div>
                                         <h3 class="project-title">HTML 5</h3>
@@ -364,10 +365,10 @@
 
                                 <li class="project-item  active" data-filter-item data-category="techical skills">
                                     <a href="#">
-                                        <div :key="skill.id" class="skill-badge">
+                                        <div class="skill-badge">
                                             <figure class="skills-img">
                                                 <img src="asset/image/skills/css-3.png" loading="lazy"
-                                                    class="skill-image" :alt="skill.title">
+                                                    class="skill-image" alt="CSS3 logo">
                                             </figure>
                                         </div>
                                         <h3 class="project-title">CSS</h3>
@@ -377,10 +378,10 @@
 
                                 <li class="project-item  active" data-filter-item data-category="techical skills">
                                     <a href="#">
-                                        <div :key="skill.id" class="skill-badge">
+                                        <div class="skill-badge">
                                             <figure class="skills-img">
                                                 <img src="asset/image/skills/js.png" loading="lazy" class="skill-image"
-                                                    :alt="skill.title">
+                                                    alt="JavaScript logo">
                                             </figure>
                                         </div>
                                         <h3 class="project-title">JavaScript</h3>
@@ -390,10 +391,10 @@
 
                                 <li class="project-item  active" data-filter-item data-category="techical skills">
                                     <a href="#">
-                                        <div :key="skill.id" class="skill-badge">
+                                        <div class="skill-badge">
                                             <figure class="skills-img">
                                                 <img src="asset/image/skills/github.png" loading="lazy"
-                                                    class="skill-image" :alt="skill.title">
+                                                    class="skill-image" alt="GitHub logo">
                                             </figure>
                                         </div>
                                         <h3 class="project-title">Git Hub</h3>
@@ -403,10 +404,10 @@
 
                                 <li class="project-item  active" data-filter-item data-category="techical skills">
                                     <a href="#">
-                                        <div :key="skill.id" class="skill-badge">
+                                        <div class="skill-badge">
                                             <figure class="skills-img">
                                                 <img src="asset/image/skills/vue-js.png" loading="lazy"
-                                                    class="skill-image" :alt="skill.title">
+                                                    class="skill-image" alt="Vue.js logo">
                                             </figure>
                                         </div>
                                         <h3 class="project-title">Vue.Js 3</h3>
@@ -416,10 +417,10 @@
 
                                 <li class="project-item  active" data-filter-item data-category="techical skills">
                                     <a href="#">
-                                        <div :key="skill.id" class="skill-badge">
+                                        <div class="skill-badge">
                                             <figure class="skills-img">
                                                 <img src="asset/image/skills/mysql.png" loading="lazy"
-                                                    class="skill-image" :alt="skill.title">
+                                                    class="skill-image" alt="MySQL logo">
                                             </figure>
                                         </div>
                                         <h3 class="project-title">MySQL</h3>
@@ -430,10 +431,10 @@
 
                                 <li class="project-item  active" data-filter-item data-category="techical skills">
                                     <a href="#">
-                                        <div :key="skill.id" class="skill-badge">
+                                        <div class="skill-badge">
                                             <figure class="skills-img">
                                                 <img src="asset/image/skills/nodejs.png" loading="lazy"
-                                                    class="skill-image" :alt="skill.title">
+                                                    class="skill-image" alt="Node.js logo">
                                             </figure>
                                         </div>
                                         <h3 class="project-title">Node.Js</h3>
@@ -445,10 +446,10 @@
 
                                 <li class="project-item  active" data-filter-item data-category="soft skills">
                                     <a href="#">
-                                        <div :key="skill.id" class="skill-badge">
+                                        <div class="skill-badge">
                                             <figure class="skills-img">
                                                 <img src="asset/image/skills/ui.png" loading="lazy" class="skill-image"
-                                                    :alt="skill.title">
+                                                    alt="UI/UX icon">
                                             </figure>
                                         </div>
                                         <h3 class="project-title">UI/UX</h3>
@@ -458,10 +459,10 @@
                                 </li>
                                 <li class="project-item  active" data-filter-item data-category="soft skills">
                                     <a href="#">
-                                        <div :key="skill.id" class="skill-badge">
+                                        <div class="skill-badge">
                                             <figure class="skills-img">
                                                 <img src="asset/image/skills/solution.png" loading="lazy"
-                                                    class="skill-image" :alt="skill.title">
+                                                    class="skill-image" alt="Problem solving icon">
                                             </figure>
                                         </div>
                                         <h3 class="project-title">Problem Solving</h3>
@@ -472,10 +473,10 @@
 
                                 <li class="project-item  active" data-filter-item data-category="badges">
                                     <a href="#">
-                                        <div :key="skill.id" class="skill-badge">
+                                        <div class="skill-badge">
                                             <figure class="skills-img">
                                                 <img src="asset/image/skills/operating-systems-basics.png"
-                                                    loading="lazy" class="skill-image" :alt="skill.title">
+                                                    loading="lazy" class="skill-image" alt="Operating Systems Basics badge">
                                             </figure>
                                         </div>
                                         <h3 class="project-title">OS Basics</h3>
@@ -487,10 +488,10 @@
 
                                 <li class="project-item  active" data-filter-item data-category="techical skills">
                                     <a href="#">
-                                        <div :key="skill.id" class="skill-badge">
+                                        <div class="skill-badge">
                                             <figure class="skills-img">
                                                 <img src="asset/image/skills/figma.png" loading="lazy"
-                                                    class="skill-image" :alt="skill.title">
+                                                    class="skill-image" alt="Figma logo">
                                             </figure>
                                         </div>
                                         <h3 class="project-title">Figma</h3>
@@ -501,10 +502,10 @@
 
                                 <li class="project-item  active" data-filter-item data-category="techical skills">
                                     <a href="#">
-                                        <div :key="skill.id" class="skill-badge">
+                                        <div class="skill-badge">
                                             <figure class="skills-img">
                                                 <img src="asset/image/skills/firebase_google_icon.png" loading="lazy"
-                                                    class="skill-image" :alt="skill.title">
+                                                    class="skill-image" alt="Firebase logo">
                                             </figure>
                                         </div>
                                         <h3 class="project-title">Fire Base</h3>
@@ -514,10 +515,10 @@
                                 </li>
                                 <li class="project-item  active" data-filter-item data-category="badges">
                                     <a href="#">
-                                        <div :key="skill.id" class="skill-badge">
+                                        <div class="skill-badge">
                                             <figure class="skills-img">
                                                 <img src="asset/image/skills/UIUX.png" loading="lazy"
-                                                    class="skill-image" :alt="skill.title">
+                                                    class="skill-image" alt="LC Studio badge: UI/UX design in Figma">
                                             </figure>
                                         </div>
                                         <h3 class="project-title">Figma UI/UX</h3>
@@ -527,10 +528,10 @@
                                 </li>
                                 <li class="project-item  active" data-filter-item data-category="badges">
                                     <a href="#">
-                                        <div :key="skill.id" class="skill-badge">
+                                        <div class="skill-badge">
                                             <figure class="skills-img">
                                                 <img src="asset/image/skills/APIs.png" loading="lazy"
-                                                    class="skill-image" :alt="skill.title">
+                                                    class="skill-image" alt="LC Studio badge: integrating public APIs into WordPress">
                                             </figure>
                                         </div>
                                         <h3 class="project-title">WordPress Ecom</h3>
@@ -683,32 +684,32 @@
                         <li class="clients-item">
                             <a href="#">
                                 <img src="/asset/image/certification/JavaScript_Essentials_2_certification.jpg"
-                                    alt="client logo" />
+                                    alt="JavaScript Essentials 2 certificate" />
                             </a>
                         </li>
 
                         <li class="clients-item">
                             <a href="#">
                                 <img src="/asset/image/certification/Operating_Systems_Basics_certification.jpg"
-                                    alt="client logo" />
+                                    alt="Operating Systems Basics certificate" />
                             </a>
                         </li>
 
                         <li class="clients-item">
                             <a href="#">
-                                <img src="/asset/image/certification/SEOCertified.png" alt="client logo" />
+                                <img src="/asset/image/certification/SEOCertified.png" alt="SEO certificate" />
                             </a>
                         </li>
 
                         <li class="clients-item">
                             <a href="#">
-                                <img src="/asset/image/certification/HubSpotSEO_ll_certified.png" alt="client logo" />
+                                <img src="/asset/image/certification/HubSpotSEO_ll_certified.png" alt="HubSpot SEO II certificate" />
                             </a>
                         </li>
 
                         <li class="clients-item">
                             <a href="#">
-                                <img src="/asset/image/certification/DigitalMarketing2024.png" alt="client logo" />
+                                <img src="/asset/image/certification/DigitalMarketing2024.png" alt="Digital Marketing 2024 certificate" />
                             </a>
                         </li>
 
@@ -965,7 +966,7 @@
                                     <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
-                                    <img src="asset/image/projects/VuePortfolio.png" alt="finance" loading="lazy">
+                                    <img src="asset/image/projects/VuePortfolio.png" alt="Screenshot of the Vue Portfolio website" loading="lazy">
                                 </figure>
 
                                 <h3 class="project-title">Vue Portfolio</h3>
@@ -983,7 +984,7 @@
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
 
-                                    <img src="asset/image/projects/RetroQueiro.png" alt="brawlhalla" loading="lazy">
+                                    <img src="asset/image/projects/RetroQueiro.png" alt="Screenshot of the Retro Queiro app" loading="lazy">
                                 </figure>
 
                                 <h3 class="project-title">Retro Queiro</h3>
@@ -1001,7 +1002,7 @@
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
 
-                                    <img src="asset/image/projects/JayMarClimbing.png" alt="brawlhalla" loading="lazy">
+                                    <img src="asset/image/projects/JayMarClimbing.png" alt="Screenshot of the JayMar Climbing website" loading="lazy">
                                 </figure>
 
                                 <h3 class="project-title">JayMar Climbing</h3>
@@ -1019,7 +1020,7 @@
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
 
-                                    <img src="asset/image/projects/FavouriteFood.png" alt="fundo" loading="lazy">
+                                    <img src="asset/image/projects/FavouriteFood.png" alt="Screenshot of the My Favourite Food website" loading="lazy">
                                 </figure>
 
                                 <h3 class="project-title">My Favourite Food</h3>
@@ -1037,7 +1038,7 @@
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
 
-                                    <img src="asset/image/projects/TodoList.png" alt="brawlhalla" loading="lazy">
+                                    <img src="asset/image/projects/TodoList.png" alt="Screenshot of the To-do app" loading="lazy">
                                 </figure>
 
                                 <h3 class="project-title">To-do App</h3>
@@ -1054,7 +1055,7 @@
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
 
-                                    <img src="asset/image/projects/BootstrapPortfolio.png" alt="brawlhalla" loading="lazy">
+                                    <img src="asset/image/projects/BootstrapPortfolio.png" alt="Screenshot of the Bootstrap Portfolio website" loading="lazy">
                                 </figure>
 
                                 <h3 class="project-title">Bootstrap Portfolio</h3>
@@ -1072,7 +1073,7 @@
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
 
-                                    <img src="asset/image/projects/GitHub.png" alt="brawlhalla"
+                                    <img src="asset/image/projects/GitHub.png" alt="Screenshot of the GitHub profile page"
                                         loading="lazy">
                                 </figure>
 
